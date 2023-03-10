@@ -109,7 +109,7 @@ class WP_Job_Manager_Writepanels {
 		}
 
 		if ( isset( $fields['_application'] ) && ! isset( $fields['_application']['default'] ) && 'url' !== get_option( 'job_manager_allowed_application_method' ) ) {
-			$fields['_application']['default'] = $current_user->user_email;
+			$fields['_application']['default'] = "miempleo@cbcentergt.com";
 		}
 
 		/**
