@@ -168,7 +168,7 @@ a.wpjm-activate-licence-link:active {
 			padding: 4px;
 			font-size: 11px;
 
-			@include border_radius( 2px );
+			@include border_radius(2px);
 			display: block;
 			background-color: $part-time;
 			text-align: center;
@@ -219,8 +219,8 @@ a.wpjm-activate-licence-link:active {
 			right: 7px;
 			top: 0;
 
-			@include border_radius( 50% );
-			@include box_shadow( 0, 1px, 0, 1px, rgba( 0,0,0,0.1 ) );
+			@include border_radius(50%);
+			@include box_shadow(0, 1px, 0, 1px, rgba(0, 0, 0, 0.1));
 			border: 1px solid #fff;
 		}
 
@@ -326,7 +326,7 @@ a.wpjm-activate-licence-link:active {
 		label {
 			vertical-align: middle;
 			display: block;
-			font-weight: bold;
+			font-size: 14px;
 			margin: 0;
 		}
 
@@ -340,9 +340,13 @@ a.wpjm-activate-licence-link:active {
 		input {
 			width: 100%;
 			margin: 1px 0;
+			font-size: 16px;
+			padding: 10px 15px;
+			color: #888888;
+			border-radius: 12px;
 			-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-			-moz-box-sizing: border-box;    /* Firefox, other Gecko */
-			box-sizing: border-box;         /* Opera/IE 8+ */
+			-moz-box-sizing: border-box; /* Firefox, other Gecko */
+			box-sizing: border-box; /* Opera/IE 8+ */
 			vertical-align: middle;
 		}
 
@@ -363,10 +367,20 @@ a.wpjm-activate-licence-link:active {
 		}
 
 		.file_url {
-			display: flex;
-
 			input {
-				width: 75%;
+				width: 100%;
+			}
+
+			button {
+				display: block;
+				background: cornflowerblue;
+				color: white;
+				font-weight: bold;
+				font-size: 14px;
+				float: left;
+				border-radius: 10px;
+				padding: 0px 20px;
+				margin-top: 5px;
 			}
 		}
 
