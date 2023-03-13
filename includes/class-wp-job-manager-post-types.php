@@ -116,7 +116,7 @@ class WP_Job_Manager_Post_Types {
 		_deprecated_function( __METHOD__, '1.35.2' );
 
 		if ( 'job_listing' === $post->post_type ) {
-			return [ 'core/freeform' ];
+			return [ 'core/paragraph' ];
 		}
 		return $allowed_block_types;
 	}
@@ -355,10 +355,6 @@ class WP_Job_Manager_Post_Types {
 						'not_found_in_trash'    => sprintf( __( 'No %s found in trash', 'wp-job-manager' ), $plural ),
 						// translators: Placeholder %s is the singular label of the job listing post type.
 						'parent'                => sprintf( __( 'Parent %s', 'wp-job-manager' ), $singular ),
-						'featured_image'        => __( 'Company Logo', 'wp-job-manager' ),
-						'set_featured_image'    => __( 'Set company logo', 'wp-job-manager' ),
-						'remove_featured_image' => __( 'Remove company logo', 'wp-job-manager' ),
-						'use_featured_image'    => __( 'Use as company logo', 'wp-job-manager' ),
 					],
 					// translators: Placeholder %s is the plural label of the job listing post type.
 					'description'           => sprintf( __( 'This is where you can create and manage %s.', 'wp-job-manager' ), $plural ),
@@ -371,15 +367,27 @@ class WP_Job_Manager_Post_Types {
 					'hierarchical'          => false,
 					'rewrite'               => $rewrite,
 					'query_var'             => true,
-					'supports'              => [ 'title', 'editor', 'custom-fields', 'publicize', 'thumbnail', 'author' ],
+					'supports'              => [ 'title', 'editor', 'custom-fields', 'publicize', 'author' ],
 					'has_archive'           => $has_archive,
 					'show_in_nav_menus'     => false,
 					'delete_with_user'      => true,
 					'show_in_rest'          => true,
 					'rest_base'             => 'job-listings',
 					'rest_controller_class' => 'WP_REST_Posts_Controller',
-					'template'              => [ [ 'core/freeform' ] ],
-					'template_lock'         => 'all',
+					'template'              => [
+						[ 'core/heading',
+							[ 'content' => __( 'Description', 'wp-job-manager' ) ]
+						],
+						[ 'core/paragraph',
+							[ 'placeholder' => __('Job Description','wp-job-manager') ]
+						],
+						[ 'core/heading',
+							[ 'content' => __( 'Requirements', 'wp-job-manager' ) ]
+						],
+						[ 'core/list' ],
+						[ 'core/image'],
+						],
+					'template_lock'         => false,
 					'menu_position'         => 30,
 				]
 			)
