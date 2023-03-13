@@ -1814,6 +1814,10 @@ msgstr ""
 msgid "Requirements"
 msgstr ""
 
+#: includes/forms/class-wp-job-manager-post-types.php:382
+msgid "Job Description"
+msgstr ""
+
 #: includes/forms/class-wp-job-manager-form-submit-job.php:297
 msgid "Enter the name of the company"
 msgstr ""
